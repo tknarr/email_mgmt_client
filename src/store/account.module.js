@@ -36,7 +36,7 @@ const state = {
     accountTypes: {
         R: {code: 'R', description: 'Root', abbreviation: 'Root', home_root: '/'},
         S: {code: 'S', description: 'System user', abbreviation: 'Sys', home_root: '/home/'},
-        A: {code: 'A', description: 'Alias', abbreviation: 'Alias', home_root: '/alias/'},
+        // A: {code: 'A', description: 'Alias', abbreviation: 'Alias', home_root: ''},
         V: {code: 'V', description: 'Virtual user', abbreviation: '', home_root: '/home/vmail/'},
     },
 }

@@ -29,9 +29,11 @@
                 </tr>
                 <system-alias v-for="alias in aliasList" :key="`${alias.username}/${alias.system_alias}`" :alias="alias"></system-alias>
             </table>
+<!--
             <div class="form_buttons">
                 <button type="button" @click="handleSync" :disabled="inProgress">Sync Alias Users with System Aliases</button>
             </div>
+-->
         </div>
         <div class="links_list">
             <router-link to="/home">Home</router-link>
