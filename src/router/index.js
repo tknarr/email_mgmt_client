@@ -16,6 +16,7 @@ const unauthenticatedPages = ['/', '/login']
 const userPages = ['/home']
 
 export const router = new Router({
+    base: process.env.ROUTER_BASE,
     mode: 'history',
     routes: [
         {path: '/home', name: 'Home', component: Home},

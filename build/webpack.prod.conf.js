@@ -122,7 +122,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ]),
     ],
     externals: {
-        config: JSON.stringify({apiUrl: 'http://localhost:3000/email-management/1.0/'}),
+        config: JSON.stringify({apiUrl: '/email-management/1.0/'}),
     },
 })
 
