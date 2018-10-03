@@ -74,7 +74,7 @@
                         this.domainList = response
                     },
                     failure => {
-                        this.error('Failed to update users list: ' + failure.message)
+                        this.error('Failed to update domain list: ' + failure.message)
                     },
                 )
             },
@@ -93,6 +93,7 @@
                                 this.inProgress = false
                             },
                             failure => {
+                                this.error('Failed to create domain: ' + failure.message)
                                 this.inProgress = false
                             }
                         )

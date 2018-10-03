@@ -26,7 +26,7 @@
                     <th>Address Domain</th>
                     <th>Recipient</th>
                 </tr>
-                <route v-for="(route, index) in routeList" :key="`${route.address_user}@${route.address_domain}`" :entry="entry" :index="index"
+                <route v-for="(route, index) in routeList" :key="`${route.address_user}@${route.address_domain}`" :entry="route" :index="index"
                        @remove-route="routeList.splice(index, 1)" @update-route="handleRouteChange"></route>
             </table>
             <div class="form_buttons">
@@ -102,6 +102,7 @@
                                 this.inProgress = false
                             },
                             failure => {
+                                this.error('Failed to create mail route: ' + failure.message)
                                 this.inProgress = false
                             }
                         )
