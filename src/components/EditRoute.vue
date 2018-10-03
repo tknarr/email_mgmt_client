@@ -29,7 +29,7 @@
                             </td>
                             <td class="entry_value">
                                 <input type="text" v-model="address_user" id="address_user" name="address_user" required :disabled="submitting" maxlength="50"
-                                       pattern="[a-zA-Z0-9_.]+"/>
+                                       pattern="[a-zA-Z0-9_.*][a-zA-Z0-9_.]*"/>
                             </td>
                         </tr>
                         <tr>
