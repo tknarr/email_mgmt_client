@@ -167,8 +167,8 @@ function syncAliases(auth) {
     )
 }
 
-function getUsers(auth, ordered) {
-    return svc.get('users', {params: {ordered: (ordered ? 'yes' : 'no')}, auth: auth})
+function getUsers(auth) {
+    return svc.get('users', {auth: auth})
     .then(
         response => {
             return Promise.resolve(response.data)
@@ -275,8 +275,8 @@ function deleteDomain(auth, domain) {
     )
 }
 
-function getRoutes(auth) {
-    return svc.get('routes', {auth: auth})
+function getRoutes(auth, ordered) {
+    return svc.get('routes', {params: {ordered: (ordered ? 'yes' : 'no')}, auth: auth})
     .then(
         response => {
             return Promise.resolve(response.data)

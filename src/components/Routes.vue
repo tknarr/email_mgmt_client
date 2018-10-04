@@ -70,7 +70,7 @@
             ...mapActions('alert', ['error']),
 
             populateRoutes() {
-                emailMgmtService.getRoutes(this.auth)
+                emailMgmtService.getRoutes(this.auth, true)
                 .then(
                     response => {
                         this.routeList = response
