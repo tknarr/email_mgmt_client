@@ -32,6 +32,10 @@ $link_active: #cd0a0a;
 
 // General style classes
 
+.icon {
+    border: 0;
+}
+
 .icon-delete {
     color: red;
 }
@@ -46,7 +50,7 @@ $link_active: #cd0a0a;
     color: $success;
 }
 
-.error_message{
+.error_message {
     color: $error;
 }
 
@@ -153,7 +157,7 @@ th.listing, td.listing {
     text-align: left;
 }
 
-td.listing_centered{
+td.listing_centered {
     text-align: center;
 }
 

@@ -89,7 +89,7 @@
             handleCreateUser() {
                 let blankUser = {
                     username: '',
-                    acct_type: '',
+                    acct_type: 'V',
                     admin: 0,
                 }
                 this.inProgress = true

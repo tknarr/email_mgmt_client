@@ -58,7 +58,7 @@
                             <td class="entry_value">
                                 <select id="account_type" v-model="accountType" name="account_type" required :disabled="submitting || accountType == 'A'">
                                     <option value=""></option>
-                                    <option v-for="type in accountTypes" :key="type.code" :value="type.code">{{type.description}}</option>
+                                    <option v-for="type in accountTypes" :key="type.code" :value="type.code" :selected="accountType == type.code">{{type.description}}</option>
                                 </select>
                             </td>
                         </tr>

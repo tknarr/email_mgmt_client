@@ -22,7 +22,7 @@
         <td>{{domain.name}}</td>
         <td>{{domain.default_recipient}}</td>
         <td class="listing_centered">
-            <span class="form_item_button"><i class="fas fa-trash-alt icon-delete" @click="handleDeleteDomain" :disabled="inProgress"></i></span>
+            <a href="#" @click.prevent="handleDeleteDomain" :disabled="inProgress"><i class="fas fa-trash-alt icon icon-delete"></i></a>
         </td>
     </tr>
 </template>

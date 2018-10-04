@@ -23,8 +23,8 @@
         <td>{{entry.address_domain}}</td>
         <td>{{entry.recipient}}</td>
         <td class="listing_centered">
-            <span class="form_item_button"><i class="fas fa-edit" @click="handleEditRoute" :disabled="inProgress"></i></span>
-            <span class="form_item_button"><i class="fas fa-trash-alt icon-delete" @click="handleDeleteRoute" :disabled="inProgress"></i></span>
+            <a href="#" @click="handleEditRoute" :disabled="inProgress"><i class="fas fa-edit icon"></i></a>
+            <a href="#" @click.prevent="handleDeleteRoute" :disabled="inProgress"><i class="fas fa-trash-alt icon icon-delete"></i></a>
         </td>
     </tr>
 </template>
