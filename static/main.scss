@@ -74,16 +74,12 @@ a:visited {
     color: $link_visited;
 }
 
-a:hover {
+a:hover, a:active, a:focus {
     color: $link_active;
 }
 
-a:active {
-    color: $link_active;
-}
-
-a:focus {
-    color: $link_active;
+a:hover .icon-delete, a:active .icon-delete, a:focus .icon-delete {
+color: $link_active;
 }
 
 h2.page_title {

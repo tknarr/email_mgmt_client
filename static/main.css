@@ -47,13 +47,10 @@ a {
 a:visited {
   color: #336699; }
 
-a:hover {
+a:hover, a:active, a:focus {
   color: #cd0a0a; }
 
-a:active {
-  color: #cd0a0a; }
-
-a:focus {
+a:hover .icon-delete, a:active .icon-delete, a:focus .icon-delete {
   color: #cd0a0a; }
 
 h2.page_title {
