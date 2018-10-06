@@ -42,7 +42,7 @@
     import {emailMgmtService} from '@/services'
     import EditUser from '@/components/EditUser'
 
-    const editDialog = dialogCreate(EditUser, 'user')
+    const editDialog = dialogCreate(EditUser, 'user', 'passwordRequired')
 
     export default {
         name: 'user',
@@ -102,7 +102,7 @@
 
             handleEditUser() {
                 this.inProgress = true
-                editDialog(this.user)
+                editDialog(this.user, false)
                 .then(
                     result => {
                         emailMgmtService.updateUser(this.auth, this.user.username, result)

@@ -38,7 +38,7 @@
                             </td>
                             <td class="entry_value">
                                 <input type="password" v-model="password" id="password" name="password" :disabled="submitting || accountType == 'A'"
-                                       :required="accountType != 'A'" maxlength="50"/>
+                                       :required="(passwordRequired && (accountType != 'A')) || (confirmPassword != '')" maxlength="50"/>
                             </td>
                         </tr>
                         <tr>
@@ -46,9 +46,10 @@
                                 <label for="confirmPassword">Confirm password:</label>
                             </td>
                             <td class="entry_value">
-                                <input type="password" v-model="confirmPassword" id="confirmPassword" name="confirmPassword"
+                                <input type="password" v-model="confirmPassword" id="confirmPassword" name="confirmPassword" :required="(password != '')"
                                        :disabled="submitting || accountType == 'A'" maxlength="50"/>
-                                <div v-show="submitted && (password != confirmPassword)" class="error_message">Confirmation must match password.</div>
+                                <div v-show="submitted && (password != confirmPassword)" class="error_message">Password confirmation does not match password.
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -58,7 +59,9 @@
                             <td class="entry_value">
                                 <select id="account_type" v-model="accountType" name="account_type" required :disabled="submitting || accountType == 'A'">
                                     <option value=""></option>
-                                    <option v-for="type in accountTypes" :key="type.code" :value="type.code" :selected="accountType == type.code">{{type.description}}</option>
+                                    <option v-for="type in accountTypes" :key="type.code" :value="type.code" :selected="accountType == type.code">
+                                        {{type.description}}
+                                    </option>
                                 </select>
                             </td>
                         </tr>
@@ -86,7 +89,7 @@
 
     export default {
         name: 'edit-user',
-        props: ['user'],
+        props: ['user', 'passwordRequired'],
         data() {
             return {
                 submitted: false,
@@ -117,7 +120,7 @@
                 this.submitted = true
                 this.submitting = true
                 // eslint-disable-next-line eqeqeq
-                if (!this.username || !this.accountType || (!this.password && this.accountType != 'A') || (this.password != this.confirmPassword)) {
+                if ((this.username == '') || (this.accountType == '') || (this.passwordRequired && this.password == '' && this.accountType != 'A') || (this.password != this.confirmPassword)) {
                     this.submitting = false
                     return
                 }

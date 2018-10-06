@@ -48,7 +48,7 @@
     import User from '@/components/User'
     import EditUser from '@/components/EditUser'
 
-    const addDialog = dialogCreate(EditUser, 'user')
+    const addDialog = dialogCreate(EditUser, 'user', 'passwordRequired')
 
     export default {
         name: 'users',
@@ -93,7 +93,7 @@
                     admin: 0,
                 }
                 this.inProgress = true
-                addDialog(blankUser)
+                addDialog(blankUser, true)
                 .then(
                     result => {
                         emailMgmtService.createUser(this.auth, result)
