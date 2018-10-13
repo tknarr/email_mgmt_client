@@ -103,7 +103,7 @@
                                 this.inProgress = false
                             },
                             failure => {
-                                this.error('Failed to crate user: ' + failure.message)
+                                this.error('Failed to create user: ' + failure.message)
                                 this.inProgress = false
                             }
                         )
